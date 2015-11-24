@@ -1,0 +1,72 @@
+<?php echo $this->getContent(); ?>
+<div align="right">
+    <?php echo \Phalcon\Tag::linkTo(array("ghostfreeapplay/new", "Create Ghost free applay")) ?>
+</div>
+
+<div align="center">
+    <h1>Search ghost free applay</h1>
+    <?php echo \Phalcon\Tag::form(array("ghostfreeapplay/search")) ?>
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="ID">ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="NAME">NAME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("NAME", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PHONE">PHONE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PHONE", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="APPLAYNUM">APPLAYNUM</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("APPLAYNUM", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="UPDATETIME">UPDATETIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("UPDATETIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CRTIME">CRTIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CRTIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="REASON">REASON</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textArea(array("REASON", "cols" => "40", "rows" => "5")) ?>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td><td><?php echo \Phalcon\Tag::submitButton(array("Search")) ?></td>
+        </tr>
+    </table>
+</form>
+</div>

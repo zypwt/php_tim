@@ -1,0 +1,55 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("cardinfo/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("cardinfo/new", "Create card info")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>BATCH Of ID</th>
+            <th>CARD Of NO</th>
+            <th>CARD Of PWD</th>
+            <th>AUDIT Of STATUS</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $cardinfo){ ?>
+        <tr>
+            <td><?php echo $cardinfo->ID ?></td>
+            <td><?php echo $cardinfo->BATCH_ID ?></td>
+            <td><?php echo $cardinfo->CARD_NO ?></td>
+            <td><?php echo $cardinfo->CARD_PWD ?></td>
+            <td><?php echo $cardinfo->AUDIT_STATUS ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("cardinfo/edit/".$cardinfo->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("cardinfo/delete/".$cardinfo->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="5" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("cardinfo/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("cardinfo/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("cardinfo/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("cardinfo/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

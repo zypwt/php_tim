@@ -1,0 +1,57 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("oordersettle/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("oordersettle/new", "Create o order settle")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ORDER Of ID</th>
+            <th>SETTLE Of STATUS</th>
+            <th>PRE Of SETTLE Of TIME</th>
+            <th>SETTLE Of DONE Of TIME</th>
+            <th>PRE Of SETTLE Of OPERATOR</th>
+            <th>SETTLE Of DONE Of OPERATOR</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $oordersettle){ ?>
+        <tr>
+            <td><?php echo $oordersettle->ORDER_ID ?></td>
+            <td><?php echo $oordersettle->SETTLE_STATUS ?></td>
+            <td><?php echo $oordersettle->PRE_SETTLE_TIME ?></td>
+            <td><?php echo $oordersettle->SETTLE_DONE_TIME ?></td>
+            <td><?php echo $oordersettle->PRE_SETTLE_OPERATOR ?></td>
+            <td><?php echo $oordersettle->SETTLE_DONE_OPERATOR ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("oordersettle/edit/"., "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("oordersettle/delete/"., "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="6" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("oordersettle/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("oordersettle/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("oordersettle/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("oordersettle/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

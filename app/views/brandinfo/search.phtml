@@ -1,0 +1,67 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("brandinfo/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("brandinfo/new", "Create brand info")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="table table-bordered table-striped" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>IS Of VISIBEL</th>
+            <th>CREATE Of TIME</th>
+            <th>UPDATE Of TIME</th>
+            <th>ONLINE Of IDS</th>
+            <th>CITY Of ID</th>
+            <th>SORT</th>
+            <th>IMAGE</th>
+            <th>BRANDURL</th>
+            <th>TEMPLET</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $brandinfo){ ?>
+        <tr>
+            <td><?php echo $brandinfo->ID ?></td>
+            <td><?php echo $brandinfo->NAME ?></td>
+            <td><?php echo $brandinfo->IS_VISIBEL ?></td>
+            <td><?php echo $brandinfo->CREATE_TIME ?></td>
+            <td><?php echo $brandinfo->UPDATE_TIME ?></td>
+            <td><?php echo $brandinfo->ONLINE_IDS ?></td>
+            <td><?php echo $brandinfo->CITY_ID ?></td>
+            <td><?php echo $brandinfo->SORT ?></td>
+            <td><img src="<?php echo $brandinfo->IMAGE ?>"></td>
+            <td><?php echo $brandinfo->BRANDURL ?></td>
+            <td><?php echo $brandinfo->TEMPLET ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("brandinfo/edit/".$brandinfo->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("brandinfo/delete/".$brandinfo->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="11" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("brandinfo/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("brandinfo/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("brandinfo/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("brandinfo/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

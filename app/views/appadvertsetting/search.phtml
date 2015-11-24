@@ -1,0 +1,59 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("appadvertsetting/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("appadvertsetting/new", "Create app advert setting")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ITEMURL</th>
+            <th>IMAGENAME</th>
+            <th>ONLINEID</th>
+            <th>UPDATETIME</th>
+            <th>CRTIME</th>
+            <th>USEDSTATUS</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $appadvertsetting){ ?>
+        <tr>
+            <td><?php echo $appadvertsetting->ID ?></td>
+            <td><?php echo $appadvertsetting->ITEMURL ?></td>
+            <td><?php echo $appadvertsetting->IMAGENAME ?></td>
+            <td><?php echo $appadvertsetting->ONLINEID ?></td>
+            <td><?php echo $appadvertsetting->UPDATETIME ?></td>
+            <td><?php echo $appadvertsetting->CRTIME ?></td>
+            <td><?php echo $appadvertsetting->USEDSTATUS ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("appadvertsetting/edit/".$appadvertsetting->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("appadvertsetting/delete/".$appadvertsetting->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="7" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("appadvertsetting/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("appadvertsetting/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("appadvertsetting/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("appadvertsetting/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

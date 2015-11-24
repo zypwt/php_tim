@@ -1,0 +1,67 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("financestatisticitem/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("financestatisticitem/new", "Create finance statistic item")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ITEM Of NAME</th>
+            <th>COMPANY</th>
+            <th>PLACE</th>
+            <th>SHOW Of START Of TIME</th>
+            <th>SHOW Of END Of TIME</th>
+            <th>TICKET Of SYS Of DIC Of ID</th>
+            <th>CLEARING Of PARTY</th>
+            <th>IS Of CONTACT</th>
+            <th>UPDATE Of TIME</th>
+            <th>UPDATE Of USER Of ID</th>
+            <th>ID</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $financestatisticitem){ ?>
+        <tr>
+            <td><?php echo $financestatisticitem->ITEM_NAME ?></td>
+            <td><?php echo $financestatisticitem->COMPANY ?></td>
+            <td><?php echo $financestatisticitem->PLACE ?></td>
+            <td><?php echo $financestatisticitem->SHOW_START_TIME ?></td>
+            <td><?php echo $financestatisticitem->SHOW_END_TIME ?></td>
+            <td><?php echo $financestatisticitem->TICKET_SYS_DIC_ID ?></td>
+            <td><?php echo $financestatisticitem->CLEARING_PARTY ?></td>
+            <td><?php echo $financestatisticitem->IS_CONTACT ?></td>
+            <td><?php echo $financestatisticitem->UPDATE_TIME ?></td>
+            <td><?php echo $financestatisticitem->UPDATE_USER_ID ?></td>
+            <td><?php echo $financestatisticitem->ID ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("financestatisticitem/edit/"., "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("financestatisticitem/delete/"., "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="11" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("financestatisticitem/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("financestatisticitem/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("financestatisticitem/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("financestatisticitem/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

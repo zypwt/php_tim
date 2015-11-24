@@ -1,0 +1,63 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("itemactivity/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("itemactivity/new", "Create item activity")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>A Of NAME</th>
+            <th>A Of TYPE</th>
+            <th>A Of STARTTIME</th>
+            <th>A Of ENDTIME</th>
+            <th>A Of PLATFORM</th>
+            <th>IS Of VISIBLE</th>
+            <th>AUDIT Of STATUS</th>
+            <th>A Of CONTENT</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $itemactivity){ ?>
+        <tr>
+            <td><?php echo $itemactivity->ID ?></td>
+            <td><?php echo $itemactivity->A_NAME ?></td>
+            <td><?php echo $itemactivity->A_TYPE ?></td>
+            <td><?php echo $itemactivity->A_STARTTIME ?></td>
+            <td><?php echo $itemactivity->A_ENDTIME ?></td>
+            <td><?php echo $itemactivity->A_PLATFORM ?></td>
+            <td><?php echo $itemactivity->IS_VISIBLE ?></td>
+            <td><?php echo $itemactivity->AUDIT_STATUS ?></td>
+            <td><?php echo $itemactivity->A_CONTENT ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("itemactivity/edit/"., "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("itemactivity/delete/"., "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="9" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("itemactivity/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("itemactivity/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("itemactivity/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("itemactivity/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

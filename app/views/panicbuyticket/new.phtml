@@ -1,0 +1,122 @@
+<?php echo \Phalcon\Tag::form("panicbuyticket/create") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("panicbuyticket", "Go Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton("Save") ?></td>
+    <tr>
+</table>
+
+<?php echo $this->getContent(); ?>
+
+<div align="center">
+    <h1>Create panic buy ticket</h1>
+</div>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="ID">ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="SCENE_ID">SCENE Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("SCENE_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ITEM_ID">ITEM Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ITEM_ID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="STATUS">STATUS</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("STATUS", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="IS_VISIBLE">IS Of VISIBLE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("IS_VISIBLE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CREATE_TIME">CREATE Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CREATE_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CREATE_UUID">CREATE Of UUID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CREATE_UUID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="UPDATE_TIME">UPDATE Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("UPDATE_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="UPDATE_UUID">UPDATE Of UUID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("UPDATE_UUID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="SELL_NUM">SELL Of NUM</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("SELL_NUM", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="SYNC_SELL_NUM">SYNC Of SELL Of NUM</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("SYNC_SELL_NUM", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="START_TIME">START Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("START_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="END_TIME">END Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("END_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+    </table>
+<?php echo \Phalcon\Tag::endForm() ?>

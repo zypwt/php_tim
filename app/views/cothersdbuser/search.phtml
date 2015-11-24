@@ -1,0 +1,73 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("cothersdbuser/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("cothersdbuser/new", "Create c others dbuser")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>PERSON Of NAME</th>
+            <th>MOBILE Of PHONE</th>
+            <th>CONTACT Of PHONE</th>
+            <th>ADDRESS</th>
+            <th>OFFICE</th>
+            <th>DESCRIPTION</th>
+            <th>CREATE Of TIME</th>
+            <th>UPDATE Of TIME</th>
+            <th>RELATE Of CITY Of IDS</th>
+            <th>HIDDEN</th>
+            <th>UUID</th>
+            <th>PASSWORD</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $cothersdbuser){ ?>
+        <tr>
+            <td><?php echo $cothersdbuser->ID ?></td>
+            <td><?php echo $cothersdbuser->NAME ?></td>
+            <td><?php echo $cothersdbuser->PERSON_NAME ?></td>
+            <td><?php echo $cothersdbuser->MOBILE_PHONE ?></td>
+            <td><?php echo $cothersdbuser->CONTACT_PHONE ?></td>
+            <td><?php echo $cothersdbuser->ADDRESS ?></td>
+            <td><?php echo $cothersdbuser->OFFICE ?></td>
+            <td><?php echo $cothersdbuser->DESCRIPTION ?></td>
+            <td><?php echo $cothersdbuser->CREATE_TIME ?></td>
+            <td><?php echo $cothersdbuser->UPDATE_TIME ?></td>
+            <td><?php echo $cothersdbuser->RELATE_CITY_IDS ?></td>
+            <td><?php echo $cothersdbuser->HIDDEN ?></td>
+            <td><?php echo $cothersdbuser->UUID ?></td>
+            <td><?php echo $cothersdbuser->PASSWORD ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("cothersdbuser/edit/".$cothersdbuser->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("cothersdbuser/delete/".$cothersdbuser->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="14" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("cothersdbuser/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("cothersdbuser/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("cothersdbuser/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("cothersdbuser/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

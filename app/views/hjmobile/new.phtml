@@ -1,0 +1,26 @@
+<?php echo \Phalcon\Tag::form("hjmobile/create") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("hjmobile", "Go Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton("Save") ?></td>
+    <tr>
+</table>
+
+<?php echo $this->getContent(); ?>
+
+<div align="center">
+    <h1>Create hj mobile</h1>
+</div>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="MOBILE">MOBILE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("MOBILE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+    </table>
+<?php echo \Phalcon\Tag::endForm() ?>

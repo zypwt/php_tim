@@ -1,0 +1,98 @@
+<?php echo $this->getContent(); ?>
+
+<?php echo \Phalcon\Tag::form("luckdraw/save") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("luckdraw", "Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton(array("Save")) ?></td>
+    <tr>
+</table>
+
+<div align="center">
+    <h1>Edit luckdraw</h1>
+</div>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="ID">ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="USER_ID">USER Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("USER_ID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ORDER_ID">ORDER Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ORDER_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PRICE">PRICE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PRICE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="STATUS">STATUS</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("STATUS", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="DRAW_TIME">DRAW Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("DRAW_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="GIFT_CARD_ID">GIFT Of CARD Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("GIFT_CARD_ID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PRIZE_DETAIL">PRIZE Of DETAIL</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PRIZE_DETAIL", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="DRAW_DAY">DRAW Of DAY</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("DRAW_DAY", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CARD_PRICE">CARD Of PRICE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CARD_PRICE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+    </table>
+    <?php echo \Phalcon\Tag::endForm() ?>

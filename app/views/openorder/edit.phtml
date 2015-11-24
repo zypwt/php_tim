@@ -1,0 +1,74 @@
+<?php echo $this->getContent(); ?>
+
+<?php echo \Phalcon\Tag::form("openorder/save") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("openorder", "Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton(array("Save")) ?></td>
+    <tr>
+</table>
+
+<div align="center">
+    <h1>Edit openorder</h1>
+</div>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="ID">ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="IDNO">IDNO</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("IDNO", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="TYPE">TYPE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("TYPE", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="STATE">STATE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("STATE", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="TIME">TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CREATETIME">CREATETIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CREATETIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="READSTATUS">READSTATUS</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("READSTATUS", "type" => "numeric")) ?>
+            </td>
+        </tr>
+    </table>
+    <?php echo \Phalcon\Tag::endForm() ?>

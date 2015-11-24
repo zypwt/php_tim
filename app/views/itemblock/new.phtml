@@ -1,0 +1,58 @@
+<?php echo \Phalcon\Tag::form("itemblock/create") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("itemblock", "Go Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton("Save") ?></td>
+    <tr>
+</table>
+
+<?php echo $this->getContent(); ?>
+
+<div align="center">
+    <h1>Create item block</h1>
+</div>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="ID">ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ITEM_ID">ITEM Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ITEM_ID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ITEM_TITLE">ITEM Of TITLE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ITEM_TITLE", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="OP_NAME">OP Of NAME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("OP_NAME", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="IS_BLOCK">IS Of BLOCK</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("IS_BLOCK", "size" => 30)) ?>
+            </td>
+        </tr>
+    </table>
+<?php echo \Phalcon\Tag::endForm() ?>

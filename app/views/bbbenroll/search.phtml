@@ -1,0 +1,61 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("bbbenroll/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("bbbenroll/new", "Create bbb enroll")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>PHONE</th>
+            <th>SCORE</th>
+            <th>UPDATETIME</th>
+            <th>CRTIME</th>
+            <th>VERSION</th>
+            <th>SHARELINK</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $bbbenroll){ ?>
+        <tr>
+            <td><?php echo $bbbenroll->ID ?></td>
+            <td><?php echo $bbbenroll->NAME ?></td>
+            <td><?php echo $bbbenroll->PHONE ?></td>
+            <td><?php echo $bbbenroll->SCORE ?></td>
+            <td><?php echo $bbbenroll->UPDATETIME ?></td>
+            <td><?php echo $bbbenroll->CRTIME ?></td>
+            <td><?php echo $bbbenroll->VERSION ?></td>
+            <td><?php echo $bbbenroll->SHARELINK ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("bbbenroll/edit/".$bbbenroll->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("bbbenroll/delete/".$bbbenroll->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="8" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("bbbenroll/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("bbbenroll/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("bbbenroll/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("bbbenroll/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

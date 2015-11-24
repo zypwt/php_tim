@@ -1,0 +1,114 @@
+<?php echo \Phalcon\Tag::form("itemdetailinfo/create") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("itemdetailinfo", "Go Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton("Save") ?></td>
+    <tr>
+</table>
+
+<?php echo $this->getContent(); ?>
+
+<div align="center">
+    <h1>Create item detail info</h1>
+</div>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="ID">ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ITEM_ID">ITEM Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ITEM_ID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ITEM_DESC">ITEM Of DESC</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textArea(array("ITEM_DESC", "cols" => "40", "rows" => "5")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ITEM_DETAIL_DESC">ITEM Of DETAIL Of DESC</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textArea(array("ITEM_DETAIL_DESC", "cols" => "40", "rows" => "5")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CREATE_TIME">CREATE Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CREATE_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="UPDATE_TIME">UPDATE Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("UPDATE_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ITEM_IMAGE_LIST">ITEM Of IMAGE Of LIST</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textArea(array("ITEM_IMAGE_LIST", "cols" => "40", "rows" => "5")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="MATE_TITLE">MATE Of TITLE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("MATE_TITLE", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="MATE_KEYWORDS">MATE Of KEYWORDS</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textArea(array("MATE_KEYWORDS", "cols" => "40", "rows" => "5")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="MATE_DESC">MATE Of DESC</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textArea(array("MATE_DESC", "cols" => "40", "rows" => "5")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="HELP_INFORMATION">HELP Of INFORMATION</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textArea(array("HELP_INFORMATION", "cols" => "40", "rows" => "5")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ITEM_APP_DESC">ITEM Of APP Of DESC</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textArea(array("ITEM_APP_DESC", "cols" => "40", "rows" => "5")) ?>
+            </td>
+        </tr>
+    </table>
+<?php echo \Phalcon\Tag::endForm() ?>

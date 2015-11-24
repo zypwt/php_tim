@@ -1,0 +1,72 @@
+<?php echo $this->getContent(); ?>
+<div align="right">
+    <?php echo \Phalcon\Tag::linkTo(array("iteminfolog/new", "Create Item info log")) ?>
+</div>
+
+<div align="center">
+    <h1>Search item info log</h1>
+    <?php echo \Phalcon\Tag::form(array("iteminfolog/search")) ?>
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="ID">ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ITEM_ID">ITEM Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ITEM_ID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ONLINE_ID">ONLINE Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ONLINE_ID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CONTENT">CONTENT</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textArea(array("CONTENT", "cols" => "40", "rows" => "5")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CREATE_TIME">CREATE Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CREATE_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PERSON_UUID">PERSON Of UUID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PERSON_UUID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PERSON_NAME">PERSON Of NAME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PERSON_NAME", "size" => 30)) ?>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td><td><?php echo \Phalcon\Tag::submitButton(array("Search")) ?></td>
+        </tr>
+    </table>
+</form>
+</div>

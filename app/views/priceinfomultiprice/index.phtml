@@ -1,0 +1,80 @@
+<?php echo $this->getContent(); ?>
+<div align="right">
+    <?php echo \Phalcon\Tag::linkTo(array("priceinfomultiprice/new", "Create Price info multi price")) ?>
+</div>
+
+<div align="center">
+    <h1>Search price info multi price</h1>
+    <?php echo \Phalcon\Tag::form(array("priceinfomultiprice/search")) ?>
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="ID">ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="P_ID">P Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("P_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="SENCE_ID">SENCE Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("SENCE_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="SHOW_ID">SHOW Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("SHOW_ID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="XSZC_ID">XSZC Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("XSZC_ID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PJDJ">PJDJ</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PJDJ", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="SHOW_DATE_CRM">SHOW Of DATE Of CRM</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("SHOW_DATE_CRM", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="XSZC_MC">XSZC Of MC</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("XSZC_MC", "size" => 30)) ?>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td><td><?php echo \Phalcon\Tag::submitButton(array("Search")) ?></td>
+        </tr>
+    </table>
+</form>
+</div>

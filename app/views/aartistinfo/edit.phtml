@@ -1,0 +1,122 @@
+<?php echo $this->getContent(); ?>
+
+<?php echo \Phalcon\Tag::form("aartistinfo/save") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("aartistinfo", "Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton(array("Save")) ?></td>
+    <tr>
+</table>
+
+<div align="center">
+    <h1>Edit aartistinfo</h1>
+</div>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="ID">ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ARTIST_NAME">ARTIST Of NAME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ARTIST_NAME", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ARTIST_EN_NAME">ARTIST Of EN Of NAME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ARTIST_EN_NAME", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ARTIST_SPELL">ARTIST Of SPELL</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ARTIST_SPELL", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ARTIST_AREA">ARTIST Of AREA</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ARTIST_AREA", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ARTIST_TYPE">ARTIST Of TYPE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ARTIST_TYPE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="IS_VISIBLE">IS Of VISIBLE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("IS_VISIBLE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ARTIST_OCCUPATION">ARTIST Of OCCUPATION</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ARTIST_OCCUPATION", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ARTIST_DESC">ARTIST Of DESC</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ARTIST_DESC", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ARTIST_IMAGE_URL">ARTIST Of IMAGE Of URL</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ARTIST_IMAGE_URL", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ARTIST_BIRTHDAY">ARTIST Of BIRTHDAY</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ARTIST_BIRTHDAY", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CREATE_TIME">CREATE Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CREATE_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="UPDATE_TIME">UPDATE Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("UPDATE_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+    </table>
+    <?php echo \Phalcon\Tag::endForm() ?>

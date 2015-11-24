@@ -1,0 +1,53 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("onlinechoose/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("onlinechoose/new", "Create online choose")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ITEM Of ID</th>
+            <th>SENCE Of ID</th>
+            <th>FILE Of ID</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $onlinechoose){ ?>
+        <tr>
+            <td><?php echo $onlinechoose->ID ?></td>
+            <td><?php echo $onlinechoose->ITEM_ID ?></td>
+            <td><?php echo $onlinechoose->SENCE_ID ?></td>
+            <td><?php echo $onlinechoose->FILE_ID ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("onlinechoose/edit/".$onlinechoose->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("onlinechoose/delete/".$onlinechoose->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="4" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("onlinechoose/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("onlinechoose/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("onlinechoose/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("onlinechoose/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

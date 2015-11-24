@@ -1,0 +1,119 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("oticketbak/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("oticketbak/new", "Create o ticket bak")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ORDER Of ID</th>
+            <th>UUID</th>
+            <th>USERNAME</th>
+            <th>PRICE Of INFO Of ID</th>
+            <th>PRICE</th>
+            <th>PRICE Of LEVEL</th>
+            <th>TICKET Of NAME</th>
+            <th>TICKET Of TYPE</th>
+            <th>VENUES Of ID</th>
+            <th>SCENE Of ID</th>
+            <th>TICKET Of NUM</th>
+            <th>SEATS</th>
+            <th>DISCOUNT</th>
+            <th>DISCOUNT Of MONEY</th>
+            <th>MONEY</th>
+            <th>TICKET Of SOURCE</th>
+            <th>PIAOWU Of ORDER Of ID</th>
+            <th>ITEM Of TYPE Of ID</th>
+            <th>ITEM Of ID</th>
+            <th>ONLINE Of ID</th>
+            <th>ITEM Of SOURCE</th>
+            <th>ITEM Of CITY Of ID</th>
+            <th>SELL Of TYPE</th>
+            <th>TICKET Of STATUS</th>
+            <th>TICKET Of PACKAGE</th>
+            <th>TICKET Of PACKAGE Of PRICE</th>
+            <th>PIAOWU Of XSZC</th>
+            <th>PIAOWU Of ZYZK</th>
+            <th>SOLD Of TIME</th>
+            <th>UPDATE Of TIME</th>
+            <th>CREATE Of TIME</th>
+            <th>ITEM Of AGENCY Of ID</th>
+            <th>ITEM Of ONLINE Of CITY Of ID</th>
+            <th>SEAT Of NAME</th>
+            <th>SEAT Of NUM</th>
+            <th>COST Of PRICE</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $oticketbak){ ?>
+        <tr>
+            <td><?php echo $oticketbak->ID ?></td>
+            <td><?php echo $oticketbak->ORDER_ID ?></td>
+            <td><?php echo $oticketbak->UUID ?></td>
+            <td><?php echo $oticketbak->USERNAME ?></td>
+            <td><?php echo $oticketbak->PRICE_INFO_ID ?></td>
+            <td><?php echo $oticketbak->PRICE ?></td>
+            <td><?php echo $oticketbak->PRICE_LEVEL ?></td>
+            <td><?php echo $oticketbak->TICKET_NAME ?></td>
+            <td><?php echo $oticketbak->TICKET_TYPE ?></td>
+            <td><?php echo $oticketbak->VENUES_ID ?></td>
+            <td><?php echo $oticketbak->SCENE_ID ?></td>
+            <td><?php echo $oticketbak->TICKET_NUM ?></td>
+            <td><?php echo $oticketbak->SEATS ?></td>
+            <td><?php echo $oticketbak->DISCOUNT ?></td>
+            <td><?php echo $oticketbak->DISCOUNT_MONEY ?></td>
+            <td><?php echo $oticketbak->MONEY ?></td>
+            <td><?php echo $oticketbak->TICKET_SOURCE ?></td>
+            <td><?php echo $oticketbak->PIAOWU_ORDER_ID ?></td>
+            <td><?php echo $oticketbak->ITEM_TYPE_ID ?></td>
+            <td><?php echo $oticketbak->ITEM_ID ?></td>
+            <td><?php echo $oticketbak->ONLINE_ID ?></td>
+            <td><?php echo $oticketbak->ITEM_SOURCE ?></td>
+            <td><?php echo $oticketbak->ITEM_CITY_ID ?></td>
+            <td><?php echo $oticketbak->SELL_TYPE ?></td>
+            <td><?php echo $oticketbak->TICKET_STATUS ?></td>
+            <td><?php echo $oticketbak->TICKET_PACKAGE ?></td>
+            <td><?php echo $oticketbak->TICKET_PACKAGE_PRICE ?></td>
+            <td><?php echo $oticketbak->PIAOWU_XSZC ?></td>
+            <td><?php echo $oticketbak->PIAOWU_ZYZK ?></td>
+            <td><?php echo $oticketbak->SOLD_TIME ?></td>
+            <td><?php echo $oticketbak->UPDATE_TIME ?></td>
+            <td><?php echo $oticketbak->CREATE_TIME ?></td>
+            <td><?php echo $oticketbak->ITEM_AGENCY_ID ?></td>
+            <td><?php echo $oticketbak->ITEM_ONLINE_CITY_ID ?></td>
+            <td><?php echo $oticketbak->SEAT_NAME ?></td>
+            <td><?php echo $oticketbak->SEAT_NUM ?></td>
+            <td><?php echo $oticketbak->COST_PRICE ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("oticketbak/edit/"., "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("oticketbak/delete/"., "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="37" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("oticketbak/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("oticketbak/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("oticketbak/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("oticketbak/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

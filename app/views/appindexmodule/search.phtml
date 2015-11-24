@@ -1,0 +1,85 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("appindexmodule/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("appindexmodule/new", "Create app index module")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>TYPE</th>
+            <th>CATEGORY</th>
+            <th>BIGPIC</th>
+            <th>SMALLPIC</th>
+            <th>TOPPIC</th>
+            <th>URL</th>
+            <th>REMARK</th>
+            <th>RANK</th>
+            <th>CITYID</th>
+            <th>ISVISIBLE</th>
+            <th>CREATEUSER</th>
+            <th>CREATETIME</th>
+            <th>UPDATETIME</th>
+            <th>UPDATEUSER</th>
+            <th>NAME</th>
+            <th>STATUS</th>
+            <th>AUDITSTATUS</th>
+            <th>STARTIME</th>
+            <th>ENDTIME</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $appindexmodule){ ?>
+        <tr>
+            <td><?php echo $appindexmodule->ID ?></td>
+            <td><?php echo $appindexmodule->TYPE ?></td>
+            <td><?php echo $appindexmodule->CATEGORY ?></td>
+            <td><?php echo $appindexmodule->BIGPIC ?></td>
+            <td><?php echo $appindexmodule->SMALLPIC ?></td>
+            <td><?php echo $appindexmodule->TOPPIC ?></td>
+            <td><?php echo $appindexmodule->URL ?></td>
+            <td><?php echo $appindexmodule->REMARK ?></td>
+            <td><?php echo $appindexmodule->RANK ?></td>
+            <td><?php echo $appindexmodule->CITYID ?></td>
+            <td><?php echo $appindexmodule->ISVISIBLE ?></td>
+            <td><?php echo $appindexmodule->CREATEUSER ?></td>
+            <td><?php echo $appindexmodule->CREATETIME ?></td>
+            <td><?php echo $appindexmodule->UPDATETIME ?></td>
+            <td><?php echo $appindexmodule->UPDATEUSER ?></td>
+            <td><?php echo $appindexmodule->NAME ?></td>
+            <td><?php echo $appindexmodule->STATUS ?></td>
+            <td><?php echo $appindexmodule->AUDITSTATUS ?></td>
+            <td><?php echo $appindexmodule->STARTIME ?></td>
+            <td><?php echo $appindexmodule->ENDTIME ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("appindexmodule/edit/".$appindexmodule->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("appindexmodule/delete/".$appindexmodule->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="20" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("appindexmodule/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("appindexmodule/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("appindexmodule/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("appindexmodule/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

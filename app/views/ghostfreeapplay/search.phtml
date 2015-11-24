@@ -1,0 +1,59 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("ghostfreeapplay/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("ghostfreeapplay/new", "Create ghost free applay")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>PHONE</th>
+            <th>APPLAYNUM</th>
+            <th>UPDATETIME</th>
+            <th>CRTIME</th>
+            <th>REASON</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $ghostfreeapplay){ ?>
+        <tr>
+            <td><?php echo $ghostfreeapplay->ID ?></td>
+            <td><?php echo $ghostfreeapplay->NAME ?></td>
+            <td><?php echo $ghostfreeapplay->PHONE ?></td>
+            <td><?php echo $ghostfreeapplay->APPLAYNUM ?></td>
+            <td><?php echo $ghostfreeapplay->UPDATETIME ?></td>
+            <td><?php echo $ghostfreeapplay->CRTIME ?></td>
+            <td><?php echo $ghostfreeapplay->REASON ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("ghostfreeapplay/edit/".$ghostfreeapplay->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("ghostfreeapplay/delete/".$ghostfreeapplay->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="7" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("ghostfreeapplay/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("ghostfreeapplay/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("ghostfreeapplay/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("ghostfreeapplay/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

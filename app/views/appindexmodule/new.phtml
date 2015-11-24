@@ -1,0 +1,178 @@
+<?php echo \Phalcon\Tag::form("appindexmodule/create") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("appindexmodule", "Go Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton("Save") ?></td>
+    <tr>
+</table>
+
+<?php echo $this->getContent(); ?>
+
+<div align="center">
+    <h1>Create app index module</h1>
+</div>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="ID">ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="TYPE">TYPE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("TYPE", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CATEGORY">CATEGORY</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CATEGORY", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="BIGPIC">BIGPIC</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("BIGPIC", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="SMALLPIC">SMALLPIC</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("SMALLPIC", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="TOPPIC">TOPPIC</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("TOPPIC", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="URL">URL</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("URL", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="REMARK">REMARK</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("REMARK", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="RANK">RANK</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("RANK", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CITYID">CITYID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CITYID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ISVISIBLE">ISVISIBLE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ISVISIBLE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CREATEUSER">CREATEUSER</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CREATEUSER", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CREATETIME">CREATETIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CREATETIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="UPDATETIME">UPDATETIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("UPDATETIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="UPDATEUSER">UPDATEUSER</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("UPDATEUSER", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="NAME">NAME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("NAME", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="STATUS">STATUS</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textField(array("STATUS")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="AUDITSTATUS">AUDITSTATUS</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textField(array("AUDITSTATUS")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="STARTIME">STARTIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("STARTIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ENDTIME">ENDTIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ENDTIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+    </table>
+<?php echo \Phalcon\Tag::endForm() ?>

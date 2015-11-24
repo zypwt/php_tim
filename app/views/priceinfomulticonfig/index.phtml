@@ -1,0 +1,112 @@
+<?php echo $this->getContent(); ?>
+<div align="right">
+    <?php echo \Phalcon\Tag::linkTo(array("priceinfomulticonfig/new", "Create Price info multi config")) ?>
+</div>
+
+<div align="center">
+    <h1>Search price info multi config</h1>
+    <?php echo \Phalcon\Tag::form(array("priceinfomulticonfig/search")) ?>
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="ID">ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ITEM_ID">ITEM Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ITEM_ID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="COST_PRICE">COST Of PRICE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("COST_PRICE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PRICE">PRICE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PRICE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PRICE_TYPE">PRICE Of TYPE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PRICE_TYPE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="SELL_NUMBER">SELL Of NUMBER</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("SELL_NUMBER", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="LIMIT_MIN_NUM">LIMIT Of MIN Of NUM</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("LIMIT_MIN_NUM", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="LIMIT_MAX_NUM">LIMIT Of MAX Of NUM</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("LIMIT_MAX_NUM", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="IS_VISIBLE">IS Of VISIBLE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("IS_VISIBLE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CREATE_TIME">CREATE Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CREATE_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="SEAT_TYPE">SEAT Of TYPE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("SEAT_TYPE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="NAME">NAME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("NAME", "size" => 30)) ?>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td><td><?php echo \Phalcon\Tag::submitButton(array("Search")) ?></td>
+        </tr>
+    </table>
+</form>
+</div>

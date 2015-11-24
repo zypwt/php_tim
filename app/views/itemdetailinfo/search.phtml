@@ -1,0 +1,69 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("itemdetailinfo/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("itemdetailinfo/new", "Create item detail info")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ITEM Of ID</th>
+            <th>ITEM Of DESC</th>
+            <th>ITEM Of DETAIL Of DESC</th>
+            <th>CREATE Of TIME</th>
+            <th>UPDATE Of TIME</th>
+            <th>ITEM Of IMAGE Of LIST</th>
+            <th>MATE Of TITLE</th>
+            <th>MATE Of KEYWORDS</th>
+            <th>MATE Of DESC</th>
+            <th>HELP Of INFORMATION</th>
+            <th>ITEM Of APP Of DESC</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $itemdetailinfo){ ?>
+        <tr>
+            <td><?php echo $itemdetailinfo->ID ?></td>
+            <td><?php echo $itemdetailinfo->ITEM_ID ?></td>
+            <td><?php echo $itemdetailinfo->ITEM_DESC ?></td>
+            <td><?php echo $itemdetailinfo->ITEM_DETAIL_DESC ?></td>
+            <td><?php echo $itemdetailinfo->CREATE_TIME ?></td>
+            <td><?php echo $itemdetailinfo->UPDATE_TIME ?></td>
+            <td><?php echo $itemdetailinfo->ITEM_IMAGE_LIST ?></td>
+            <td><?php echo $itemdetailinfo->MATE_TITLE ?></td>
+            <td><?php echo $itemdetailinfo->MATE_KEYWORDS ?></td>
+            <td><?php echo $itemdetailinfo->MATE_DESC ?></td>
+            <td><?php echo $itemdetailinfo->HELP_INFORMATION ?></td>
+            <td><?php echo $itemdetailinfo->ITEM_APP_DESC ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("itemdetailinfo/edit/".$itemdetailinfo->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("itemdetailinfo/delete/".$itemdetailinfo->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="12" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("itemdetailinfo/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("itemdetailinfo/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("itemdetailinfo/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("itemdetailinfo/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

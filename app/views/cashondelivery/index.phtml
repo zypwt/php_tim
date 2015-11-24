@@ -1,0 +1,96 @@
+<?php echo $this->getContent(); ?>
+<div align="right">
+    <?php echo \Phalcon\Tag::linkTo(array("cashondelivery/new", "Create Cash on delivery")) ?>
+</div>
+
+<div align="center">
+    <h1>Search cash on delivery</h1>
+    <?php echo \Phalcon\Tag::form(array("cashondelivery/search")) ?>
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="ID">ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="AGENCY_ID">AGENCY Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("AGENCY_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="SEND_CITY_ID">SEND Of CITY Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("SEND_CITY_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="DELIVERY_TYPE">DELIVERY Of TYPE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("DELIVERY_TYPE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="DELIVERY_SCOPE">DELIVERY Of SCOPE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("DELIVERY_SCOPE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ADD_CONDITION">ADD Of CONDITION</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ADD_CONDITION", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="REMARK">REMARK</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("REMARK", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="IS_VISIBEL">IS Of VISIBEL</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("IS_VISIBEL", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CREATE_TIME">CREATE Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CREATE_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="UPDATE_TIME">UPDATE Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("UPDATE_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td><td><?php echo \Phalcon\Tag::submitButton(array("Search")) ?></td>
+        </tr>
+    </table>
+</form>
+</div>

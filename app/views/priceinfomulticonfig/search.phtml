@@ -1,0 +1,69 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("priceinfomulticonfig/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("priceinfomulticonfig/new", "Create price info multi config")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ITEM Of ID</th>
+            <th>COST Of PRICE</th>
+            <th>PRICE</th>
+            <th>PRICE Of TYPE</th>
+            <th>SELL Of NUMBER</th>
+            <th>LIMIT Of MIN Of NUM</th>
+            <th>LIMIT Of MAX Of NUM</th>
+            <th>IS Of VISIBLE</th>
+            <th>CREATE Of TIME</th>
+            <th>SEAT Of TYPE</th>
+            <th>NAME</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $priceinfomulticonfig){ ?>
+        <tr>
+            <td><?php echo $priceinfomulticonfig->ID ?></td>
+            <td><?php echo $priceinfomulticonfig->ITEM_ID ?></td>
+            <td><?php echo $priceinfomulticonfig->COST_PRICE ?></td>
+            <td><?php echo $priceinfomulticonfig->PRICE ?></td>
+            <td><?php echo $priceinfomulticonfig->PRICE_TYPE ?></td>
+            <td><?php echo $priceinfomulticonfig->SELL_NUMBER ?></td>
+            <td><?php echo $priceinfomulticonfig->LIMIT_MIN_NUM ?></td>
+            <td><?php echo $priceinfomulticonfig->LIMIT_MAX_NUM ?></td>
+            <td><?php echo $priceinfomulticonfig->IS_VISIBLE ?></td>
+            <td><?php echo $priceinfomulticonfig->CREATE_TIME ?></td>
+            <td><?php echo $priceinfomulticonfig->SEAT_TYPE ?></td>
+            <td><?php echo $priceinfomulticonfig->NAME ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("priceinfomulticonfig/edit/".$priceinfomulticonfig->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("priceinfomulticonfig/delete/".$priceinfomulticonfig->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="12" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("priceinfomulticonfig/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("priceinfomulticonfig/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("priceinfomulticonfig/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("priceinfomulticonfig/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

@@ -1,0 +1,65 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("luckdraw/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("luckdraw/new", "Create luck draw")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>USER Of ID</th>
+            <th>ORDER Of ID</th>
+            <th>PRICE</th>
+            <th>STATUS</th>
+            <th>DRAW Of TIME</th>
+            <th>GIFT Of CARD Of ID</th>
+            <th>PRIZE Of DETAIL</th>
+            <th>DRAW Of DAY</th>
+            <th>CARD Of PRICE</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $luckdraw){ ?>
+        <tr>
+            <td><?php echo $luckdraw->ID ?></td>
+            <td><?php echo $luckdraw->USER_ID ?></td>
+            <td><?php echo $luckdraw->ORDER_ID ?></td>
+            <td><?php echo $luckdraw->PRICE ?></td>
+            <td><?php echo $luckdraw->STATUS ?></td>
+            <td><?php echo $luckdraw->DRAW_TIME ?></td>
+            <td><?php echo $luckdraw->GIFT_CARD_ID ?></td>
+            <td><?php echo $luckdraw->PRIZE_DETAIL ?></td>
+            <td><?php echo $luckdraw->DRAW_DAY ?></td>
+            <td><?php echo $luckdraw->CARD_PRICE ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("luckdraw/edit/".$luckdraw->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("luckdraw/delete/".$luckdraw->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="10" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("luckdraw/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("luckdraw/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("luckdraw/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("luckdraw/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

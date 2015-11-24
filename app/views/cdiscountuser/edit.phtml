@@ -1,0 +1,122 @@
+<?php echo $this->getContent(); ?>
+
+<?php echo \Phalcon\Tag::form("cdiscountuser/save") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("cdiscountuser", "Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton(array("Save")) ?></td>
+    <tr>
+</table>
+
+<div align="center">
+    <h1>Edit cdiscountuser</h1>
+</div>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="ID">ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="NAME">NAME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("NAME", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="MOBILE_PHONE">MOBILE Of PHONE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("MOBILE_PHONE", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CONTACT_PHONE">CONTACT Of PHONE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CONTACT_PHONE", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ADDRESS">ADDRESS</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ADDRESS", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="OFFICE">OFFICE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("OFFICE", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="DESCRIPTION">DESCRIPTION</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("DESCRIPTION", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CREATE_TIME">CREATE Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CREATE_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="UPDATE_TIME">UPDATE Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("UPDATE_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="MAX_DISCOUNT">MAX Of DISCOUNT</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("MAX_DISCOUNT", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="RELATE_CITY_IDS">RELATE Of CITY Of IDS</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textArea(array("RELATE_CITY_IDS", "cols" => "40", "rows" => "5")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="HIDDEN">HIDDEN</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("HIDDEN", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="AGENCY_ID">AGENCY Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("AGENCY_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+    </table>
+    <?php echo \Phalcon\Tag::endForm() ?>

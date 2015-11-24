@@ -1,0 +1,105 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("iteminfoen/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("iteminfoen/new", "Create item info en")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ITEM Of ID</th>
+            <th>ITEM Of TITLE</th>
+            <th>ITEM Of SHORT Of TITLE</th>
+            <th>CITY Of ID</th>
+            <th>VENUE Of ID</th>
+            <th>AGENCY Of ID</th>
+            <th>TICKET Of SYS Of DIC Of ID</th>
+            <th>PROXY Of TYPE</th>
+            <th>SHOW Of TYPE</th>
+            <th>SHOW Of TIME</th>
+            <th>PRICE Of INFO</th>
+            <th>ARTIST Of ID</th>
+            <th>ITEM Of TYPE Of ID</th>
+            <th>ITEM Of TYPE Of PID</th>
+            <th>ITEM Of IMAGE Of URL</th>
+            <th>SEATS Of IMAGE Of URL</th>
+            <th>AUDIT Of STATUS</th>
+            <th>IS Of VISIBLE</th>
+            <th>ASSOCIATE Of ITEM Of ID</th>
+            <th>CREATE Of TIME</th>
+            <th>UPDATE Of TIME</th>
+            <th>ITEM Of TAG</th>
+            <th>DOUBAN Of REVIEW Of ID</th>
+            <th>SHOW Of END Of TIME</th>
+            <th>PROXY Of TAX</th>
+            <th>IS Of ETICKET</th>
+            <th>LIMIT Of CHOICE</th>
+            <th>EXCHANGE Of TYPE</th>
+            <th>THIRDITEMID</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $iteminfoen){ ?>
+        <tr>
+            <td><?php echo $iteminfoen->ID ?></td>
+            <td><?php echo $iteminfoen->ITEM_ID ?></td>
+            <td><?php echo $iteminfoen->ITEM_TITLE ?></td>
+            <td><?php echo $iteminfoen->ITEM_SHORT_TITLE ?></td>
+            <td><?php echo $iteminfoen->CITY_ID ?></td>
+            <td><?php echo $iteminfoen->VENUE_ID ?></td>
+            <td><?php echo $iteminfoen->AGENCY_ID ?></td>
+            <td><?php echo $iteminfoen->TICKET_SYS_DIC_ID ?></td>
+            <td><?php echo $iteminfoen->PROXY_TYPE ?></td>
+            <td><?php echo $iteminfoen->SHOW_TYPE ?></td>
+            <td><?php echo $iteminfoen->SHOW_TIME ?></td>
+            <td><?php echo $iteminfoen->PRICE_INFO ?></td>
+            <td><?php echo $iteminfoen->ARTIST_ID ?></td>
+            <td><?php echo $iteminfoen->ITEM_TYPE_ID ?></td>
+            <td><?php echo $iteminfoen->ITEM_TYPE_PID ?></td>
+            <td><?php echo $iteminfoen->ITEM_IMAGE_URL ?></td>
+            <td><?php echo $iteminfoen->SEATS_IMAGE_URL ?></td>
+            <td><?php echo $iteminfoen->AUDIT_STATUS ?></td>
+            <td><?php echo $iteminfoen->IS_VISIBLE ?></td>
+            <td><?php echo $iteminfoen->ASSOCIATE_ITEM_ID ?></td>
+            <td><?php echo $iteminfoen->CREATE_TIME ?></td>
+            <td><?php echo $iteminfoen->UPDATE_TIME ?></td>
+            <td><?php echo $iteminfoen->ITEM_TAG ?></td>
+            <td><?php echo $iteminfoen->DOUBAN_REVIEW_ID ?></td>
+            <td><?php echo $iteminfoen->SHOW_END_TIME ?></td>
+            <td><?php echo $iteminfoen->PROXY_TAX ?></td>
+            <td><?php echo $iteminfoen->IS_ETICKET ?></td>
+            <td><?php echo $iteminfoen->LIMIT_CHOICE ?></td>
+            <td><?php echo $iteminfoen->EXCHANGE_TYPE ?></td>
+            <td><?php echo $iteminfoen->THIRDITEMID ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("iteminfoen/edit/"., "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("iteminfoen/delete/"., "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="30" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("iteminfoen/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("iteminfoen/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("iteminfoen/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("iteminfoen/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

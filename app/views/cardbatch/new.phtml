@@ -1,0 +1,106 @@
+<?php echo \Phalcon\Tag::form("cardbatch/create") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("cardbatch", "Go Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton("Save") ?></td>
+    <tr>
+</table>
+
+<?php echo $this->getContent(); ?>
+
+<div align="center">
+    <h1>Create card batch</h1>
+</div>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="ID">ID</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textField(array("ID")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="BATCH_ID">BATCH Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("BATCH_ID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CARD_NUM">CARD Of NUM</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CARD_NUM", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CREATE_UUID">CREATE Of UUID</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textField(array("CREATE_UUID")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CREATE_NAME">CREATE Of NAME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CREATE_NAME", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CREATE_TIME">CREATE Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CREATE_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="FILE_URL">FILE Of URL</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("FILE_URL", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="AUDIT_STATUS">AUDIT Of STATUS</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("AUDIT_STATUS", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="AUDIT_UUID">AUDIT Of UUID</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textField(array("AUDIT_UUID")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="AUDIT_NAME">AUDIT Of NAME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("AUDIT_NAME", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="AUDIT_TIME">AUDIT Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("AUDIT_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+    </table>
+<?php echo \Phalcon\Tag::endForm() ?>

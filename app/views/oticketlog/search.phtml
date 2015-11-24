@@ -1,0 +1,63 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("oticketlog/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("oticketlog/new", "Create o ticket log")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ORDER Of ID</th>
+            <th>TICKET Of ID</th>
+            <th>SCREENINGS</th>
+            <th>UUID</th>
+            <th>NAME</th>
+            <th>T Of TICKETSOURCE</th>
+            <th>DESCRIBE</th>
+            <th>CREATE Of TIME</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $oticketlog){ ?>
+        <tr>
+            <td><?php echo $oticketlog->ID ?></td>
+            <td><?php echo $oticketlog->ORDER_ID ?></td>
+            <td><?php echo $oticketlog->TICKET_ID ?></td>
+            <td><?php echo $oticketlog->SCREENINGS ?></td>
+            <td><?php echo $oticketlog->UUID ?></td>
+            <td><?php echo $oticketlog->NAME ?></td>
+            <td><?php echo $oticketlog->T_TICKETSOURCE ?></td>
+            <td><?php echo $oticketlog->DESCRIBE ?></td>
+            <td><?php echo $oticketlog->CREATE_TIME ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("oticketlog/edit/".$oticketlog->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("oticketlog/delete/".$oticketlog->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="9" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("oticketlog/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("oticketlog/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("oticketlog/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("oticketlog/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

@@ -1,0 +1,210 @@
+<?php echo $this->getContent(); ?>
+
+<?php echo \Phalcon\Tag::form("ouserdelivery/save") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("ouserdelivery", "Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton(array("Save")) ?></td>
+    <tr>
+</table>
+
+<div align="center">
+    <h1>Edit ouserdelivery</h1>
+</div>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="ID">ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ORDER_ID">ORDER Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ORDER_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="UUID">UUID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("UUID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="INVOICE">INVOICE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("INVOICE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="INVOICE_TITLE">INVOICE Of TITLE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("INVOICE_TITLE", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="INVOICE_CONTENT">INVOICE Of CONTENT</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("INVOICE_CONTENT", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="REACH_CITY_ID">REACH Of CITY Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("REACH_CITY_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="DELIVER_CITY_ID">DELIVER Of CITY Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("DELIVER_CITY_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="DELIVER_TYPE">DELIVER Of TYPE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("DELIVER_TYPE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="DELIVER_TIME">DELIVER Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("DELIVER_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="REACH_USERNAME">REACH Of USERNAME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("REACH_USERNAME", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="REACH_USER_EMAIL">REACH Of USER Of EMAIL</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("REACH_USER_EMAIL", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="REACH_USER_ADDRESS">REACH Of USER Of ADDRESS</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textArea(array("REACH_USER_ADDRESS", "cols" => "40", "rows" => "5")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="REACH_USER_PHONE">REACH Of USER Of PHONE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("REACH_USER_PHONE", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="REACH_USER_PROVINCE">REACH Of USER Of PROVINCE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("REACH_USER_PROVINCE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="REACH_USER_CITY">REACH Of USER Of CITY</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("REACH_USER_CITY", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="REACH_USER_LOCALITY">REACH Of USER Of LOCALITY</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("REACH_USER_LOCALITY", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="REACH_USER_ZONE">REACH Of USER Of ZONE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("REACH_USER_ZONE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="REACH_USER_ZIPCODE">REACH Of USER Of ZIPCODE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("REACH_USER_ZIPCODE", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="DELIVER_PERSON_ID">DELIVER Of PERSON Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("DELIVER_PERSON_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="DELIVER_PERSON_NAME">DELIVER Of PERSON Of NAME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("DELIVER_PERSON_NAME", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="DELIVER_STATUS">DELIVER Of STATUS</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("DELIVER_STATUS", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="REMARKS">REMARKS</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textArea(array("REMARKS", "cols" => "40", "rows" => "5")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CREATE_TIME">CREATE Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CREATE_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+    </table>
+    <?php echo \Phalcon\Tag::endForm() ?>

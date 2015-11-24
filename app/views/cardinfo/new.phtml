@@ -1,0 +1,58 @@
+<?php echo \Phalcon\Tag::form("cardinfo/create") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("cardinfo", "Go Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton("Save") ?></td>
+    <tr>
+</table>
+
+<?php echo $this->getContent(); ?>
+
+<div align="center">
+    <h1>Create card info</h1>
+</div>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="ID">ID</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textField(array("ID")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="BATCH_ID">BATCH Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("BATCH_ID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CARD_NO">CARD Of NO</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CARD_NO", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CARD_PWD">CARD Of PWD</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CARD_PWD", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="AUDIT_STATUS">AUDIT Of STATUS</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("AUDIT_STATUS", "type" => "numeric")) ?>
+            </td>
+        </tr>
+    </table>
+<?php echo \Phalcon\Tag::endForm() ?>

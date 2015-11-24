@@ -1,0 +1,63 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("ppaymenttype/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("ppaymenttype/new", "Create p payment type")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>PARTNER Of TYPE</th>
+            <th>TYPE Of NAME</th>
+            <th>TYPE Of PARAMS</th>
+            <th>USE Of STATUS</th>
+            <th>CREATE Of TIME</th>
+            <th>AGENCY Of ID</th>
+            <th>COMISSION Of RATE</th>
+            <th>DEFAULT Of PARTNER Of TYPE</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $ppaymenttype){ ?>
+        <tr>
+            <td><?php echo $ppaymenttype->ID ?></td>
+            <td><?php echo $ppaymenttype->PARTNER_TYPE ?></td>
+            <td><?php echo $ppaymenttype->TYPE_NAME ?></td>
+            <td><?php echo $ppaymenttype->TYPE_PARAMS ?></td>
+            <td><?php echo $ppaymenttype->USE_STATUS ?></td>
+            <td><?php echo $ppaymenttype->CREATE_TIME ?></td>
+            <td><?php echo $ppaymenttype->AGENCY_ID ?></td>
+            <td><?php echo $ppaymenttype->COMISSION_RATE ?></td>
+            <td><?php echo $ppaymenttype->DEFAULT_PARTNER_TYPE ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("ppaymenttype/edit/".$ppaymenttype->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("ppaymenttype/delete/".$ppaymenttype->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="9" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("ppaymenttype/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("ppaymenttype/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("ppaymenttype/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("ppaymenttype/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

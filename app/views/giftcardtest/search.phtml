@@ -1,0 +1,75 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("giftcardtest/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("giftcardtest/new", "Create gift card test")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>CARD Of NO</th>
+            <th>CARD Of PWD</th>
+            <th>CARD Of TYPE</th>
+            <th>CARD Of PRICE</th>
+            <th>CREATE Of TIME</th>
+            <th>END Of TIME</th>
+            <th>PERSON Of UUID</th>
+            <th>PARTY Of ID</th>
+            <th>IS Of USE</th>
+            <th>BATCH Of NUMBER</th>
+            <th>CARD Of NAME</th>
+            <th>SALE Of PRICE</th>
+            <th>START Of TIME</th>
+            <th>REMARK</th>
+            <th>AUDIT Of STATUS</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $giftcardtest){ ?>
+        <tr>
+            <td><?php echo $giftcardtest->CARD_NO ?></td>
+            <td><?php echo $giftcardtest->CARD_PWD ?></td>
+            <td><?php echo $giftcardtest->CARD_TYPE ?></td>
+            <td><?php echo $giftcardtest->CARD_PRICE ?></td>
+            <td><?php echo $giftcardtest->CREATE_TIME ?></td>
+            <td><?php echo $giftcardtest->END_TIME ?></td>
+            <td><?php echo $giftcardtest->PERSON_UUID ?></td>
+            <td><?php echo $giftcardtest->PARTY_ID ?></td>
+            <td><?php echo $giftcardtest->IS_USE ?></td>
+            <td><?php echo $giftcardtest->BATCH_NUMBER ?></td>
+            <td><?php echo $giftcardtest->CARD_NAME ?></td>
+            <td><?php echo $giftcardtest->SALE_PRICE ?></td>
+            <td><?php echo $giftcardtest->START_TIME ?></td>
+            <td><?php echo $giftcardtest->REMARK ?></td>
+            <td><?php echo $giftcardtest->AUDIT_STATUS ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("giftcardtest/edit/"., "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("giftcardtest/delete/"., "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="15" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("giftcardtest/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("giftcardtest/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("giftcardtest/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("giftcardtest/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

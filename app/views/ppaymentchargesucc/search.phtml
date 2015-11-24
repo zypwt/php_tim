@@ -1,0 +1,79 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("ppaymentchargesucc/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("ppaymentchargesucc/new", "Create p payment charge succ")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>CHARGE Of NO</th>
+            <th>ORDER Of ID</th>
+            <th>PARTNER Of ORDER Of NO</th>
+            <th>PARTY Of ID</th>
+            <th>MONEY Of BASE Of FEN</th>
+            <th>PAYMENT Of STATUS</th>
+            <th>PAYMENT Of TIME</th>
+            <th>TYPE Of ID</th>
+            <th>CUSTOMER Of IP</th>
+            <th>CREATE Of TIME</th>
+            <th>UUID</th>
+            <th>AGENCY Of ID</th>
+            <th>PAY Of TYPE</th>
+            <th>PACKAGE Of ID</th>
+            <th>RECEIPT</th>
+            <th>PAYMENT Of CLASS</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $ppaymentchargesucc){ ?>
+        <tr>
+            <td><?php echo $ppaymentchargesucc->ID ?></td>
+            <td><?php echo $ppaymentchargesucc->CHARGE_NO ?></td>
+            <td><?php echo $ppaymentchargesucc->ORDER_ID ?></td>
+            <td><?php echo $ppaymentchargesucc->PARTNER_ORDER_NO ?></td>
+            <td><?php echo $ppaymentchargesucc->PARTY_ID ?></td>
+            <td><?php echo $ppaymentchargesucc->MONEY_BASE_FEN ?></td>
+            <td><?php echo $ppaymentchargesucc->PAYMENT_STATUS ?></td>
+            <td><?php echo $ppaymentchargesucc->PAYMENT_TIME ?></td>
+            <td><?php echo $ppaymentchargesucc->TYPE_ID ?></td>
+            <td><?php echo $ppaymentchargesucc->CUSTOMER_IP ?></td>
+            <td><?php echo $ppaymentchargesucc->CREATE_TIME ?></td>
+            <td><?php echo $ppaymentchargesucc->UUID ?></td>
+            <td><?php echo $ppaymentchargesucc->AGENCY_ID ?></td>
+            <td><?php echo $ppaymentchargesucc->PAY_TYPE ?></td>
+            <td><?php echo $ppaymentchargesucc->PACKAGE_ID ?></td>
+            <td><?php echo $ppaymentchargesucc->RECEIPT ?></td>
+            <td><?php echo $ppaymentchargesucc->PAYMENT_CLASS ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("ppaymentchargesucc/edit/"., "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("ppaymentchargesucc/delete/"., "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="17" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("ppaymentchargesucc/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("ppaymentchargesucc/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("ppaymentchargesucc/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("ppaymentchargesucc/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

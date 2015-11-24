@@ -1,0 +1,61 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("priceinfomultiprice/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("priceinfomultiprice/new", "Create price info multi price")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>P Of ID</th>
+            <th>SENCE Of ID</th>
+            <th>SHOW Of ID</th>
+            <th>XSZC Of ID</th>
+            <th>PJDJ</th>
+            <th>SHOW Of DATE Of CRM</th>
+            <th>XSZC Of MC</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $priceinfomultiprice){ ?>
+        <tr>
+            <td><?php echo $priceinfomultiprice->ID ?></td>
+            <td><?php echo $priceinfomultiprice->P_ID ?></td>
+            <td><?php echo $priceinfomultiprice->SENCE_ID ?></td>
+            <td><?php echo $priceinfomultiprice->SHOW_ID ?></td>
+            <td><?php echo $priceinfomultiprice->XSZC_ID ?></td>
+            <td><?php echo $priceinfomultiprice->PJDJ ?></td>
+            <td><?php echo $priceinfomultiprice->SHOW_DATE_CRM ?></td>
+            <td><?php echo $priceinfomultiprice->XSZC_MC ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("priceinfomultiprice/edit/".$priceinfomultiprice->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("priceinfomultiprice/delete/".$priceinfomultiprice->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="8" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("priceinfomultiprice/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("priceinfomultiprice/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("priceinfomultiprice/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("priceinfomultiprice/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

@@ -1,0 +1,71 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("cdiscountuser/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("cdiscountuser/new", "Create c discount user")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>MOBILE Of PHONE</th>
+            <th>CONTACT Of PHONE</th>
+            <th>ADDRESS</th>
+            <th>OFFICE</th>
+            <th>DESCRIPTION</th>
+            <th>CREATE Of TIME</th>
+            <th>UPDATE Of TIME</th>
+            <th>MAX Of DISCOUNT</th>
+            <th>RELATE Of CITY Of IDS</th>
+            <th>HIDDEN</th>
+            <th>AGENCY Of ID</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $cdiscountuser){ ?>
+        <tr>
+            <td><?php echo $cdiscountuser->ID ?></td>
+            <td><?php echo $cdiscountuser->NAME ?></td>
+            <td><?php echo $cdiscountuser->MOBILE_PHONE ?></td>
+            <td><?php echo $cdiscountuser->CONTACT_PHONE ?></td>
+            <td><?php echo $cdiscountuser->ADDRESS ?></td>
+            <td><?php echo $cdiscountuser->OFFICE ?></td>
+            <td><?php echo $cdiscountuser->DESCRIPTION ?></td>
+            <td><?php echo $cdiscountuser->CREATE_TIME ?></td>
+            <td><?php echo $cdiscountuser->UPDATE_TIME ?></td>
+            <td><?php echo $cdiscountuser->MAX_DISCOUNT ?></td>
+            <td><?php echo $cdiscountuser->RELATE_CITY_IDS ?></td>
+            <td><?php echo $cdiscountuser->HIDDEN ?></td>
+            <td><?php echo $cdiscountuser->AGENCY_ID ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("cdiscountuser/edit/".$cdiscountuser->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("cdiscountuser/delete/".$cdiscountuser->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="13" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("cdiscountuser/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("cdiscountuser/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("cdiscountuser/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("cdiscountuser/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

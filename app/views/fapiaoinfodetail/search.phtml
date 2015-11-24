@@ -1,0 +1,61 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("fapiaoinfodetail/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("fapiaoinfodetail/new", "Create fapiao info detail")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>UUID</th>
+            <th>FAPIAO Of NO</th>
+            <th>MONEY</th>
+            <th>OPT Of TIME</th>
+            <th>OPT Of NAME</th>
+            <th>REMARK</th>
+            <th>FAPIAO Of INFO Of ID</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $fapiaoinfodetail){ ?>
+        <tr>
+            <td><?php echo $fapiaoinfodetail->ID ?></td>
+            <td><?php echo $fapiaoinfodetail->UUID ?></td>
+            <td><?php echo $fapiaoinfodetail->FAPIAO_NO ?></td>
+            <td><?php echo $fapiaoinfodetail->MONEY ?></td>
+            <td><?php echo $fapiaoinfodetail->OPT_TIME ?></td>
+            <td><?php echo $fapiaoinfodetail->OPT_NAME ?></td>
+            <td><?php echo $fapiaoinfodetail->REMARK ?></td>
+            <td><?php echo $fapiaoinfodetail->FAPIAO_INFO_ID ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("fapiaoinfodetail/edit/".$fapiaoinfodetail->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("fapiaoinfodetail/delete/".$fapiaoinfodetail->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="8" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("fapiaoinfodetail/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("fapiaoinfodetail/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("fapiaoinfodetail/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("fapiaoinfodetail/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

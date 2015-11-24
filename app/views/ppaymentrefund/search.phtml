@@ -1,0 +1,77 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("ppaymentrefund/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("ppaymentrefund/new", "Create p payment refund")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>BATCH Of NO</th>
+            <th>PACKAGE Of ID</th>
+            <th>PARTNER Of ORDER Of NO</th>
+            <th>MONEY Of BASE Of FEN</th>
+            <th>REFUND Of MONEY Of BASE Of FEN</th>
+            <th>REASON</th>
+            <th>NOTIFY Of STATUS</th>
+            <th>REFUND Of TIME</th>
+            <th>TYPE Of ID</th>
+            <th>PAYMENT Of TIME</th>
+            <th>CREATE Of TIME</th>
+            <th>CHARGE Of NO</th>
+            <th>PERSON Of UUID</th>
+            <th>PERSON Of NAME</th>
+            <th>PERSON Of AGENCY Of ID</th>
+            <th>ID</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $ppaymentrefund){ ?>
+        <tr>
+            <td><?php echo $ppaymentrefund->BATCH_NO ?></td>
+            <td><?php echo $ppaymentrefund->PACKAGE_ID ?></td>
+            <td><?php echo $ppaymentrefund->PARTNER_ORDER_NO ?></td>
+            <td><?php echo $ppaymentrefund->MONEY_BASE_FEN ?></td>
+            <td><?php echo $ppaymentrefund->REFUND_MONEY_BASE_FEN ?></td>
+            <td><?php echo $ppaymentrefund->REASON ?></td>
+            <td><?php echo $ppaymentrefund->NOTIFY_STATUS ?></td>
+            <td><?php echo $ppaymentrefund->REFUND_TIME ?></td>
+            <td><?php echo $ppaymentrefund->TYPE_ID ?></td>
+            <td><?php echo $ppaymentrefund->PAYMENT_TIME ?></td>
+            <td><?php echo $ppaymentrefund->CREATE_TIME ?></td>
+            <td><?php echo $ppaymentrefund->CHARGE_NO ?></td>
+            <td><?php echo $ppaymentrefund->PERSON_UUID ?></td>
+            <td><?php echo $ppaymentrefund->PERSON_NAME ?></td>
+            <td><?php echo $ppaymentrefund->PERSON_AGENCY_ID ?></td>
+            <td><?php echo $ppaymentrefund->ID ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("ppaymentrefund/edit/"., "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("ppaymentrefund/delete/"., "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="16" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("ppaymentrefund/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("ppaymentrefund/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("ppaymentrefund/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("ppaymentrefund/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

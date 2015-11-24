@@ -1,0 +1,93 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("ouserdelivery/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("ouserdelivery/new", "Create o user delivery")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ORDER Of ID</th>
+            <th>UUID</th>
+            <th>INVOICE</th>
+            <th>INVOICE Of TITLE</th>
+            <th>INVOICE Of CONTENT</th>
+            <th>REACH Of CITY Of ID</th>
+            <th>DELIVER Of CITY Of ID</th>
+            <th>DELIVER Of TYPE</th>
+            <th>DELIVER Of TIME</th>
+            <th>REACH Of USERNAME</th>
+            <th>REACH Of USER Of EMAIL</th>
+            <th>REACH Of USER Of ADDRESS</th>
+            <th>REACH Of USER Of PHONE</th>
+            <th>REACH Of USER Of PROVINCE</th>
+            <th>REACH Of USER Of CITY</th>
+            <th>REACH Of USER Of LOCALITY</th>
+            <th>REACH Of USER Of ZONE</th>
+            <th>REACH Of USER Of ZIPCODE</th>
+            <th>DELIVER Of PERSON Of ID</th>
+            <th>DELIVER Of PERSON Of NAME</th>
+            <th>DELIVER Of STATUS</th>
+            <th>REMARKS</th>
+            <th>CREATE Of TIME</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $ouserdelivery){ ?>
+        <tr>
+            <td><?php echo $ouserdelivery->ID ?></td>
+            <td><?php echo $ouserdelivery->ORDER_ID ?></td>
+            <td><?php echo $ouserdelivery->UUID ?></td>
+            <td><?php echo $ouserdelivery->INVOICE ?></td>
+            <td><?php echo $ouserdelivery->INVOICE_TITLE ?></td>
+            <td><?php echo $ouserdelivery->INVOICE_CONTENT ?></td>
+            <td><?php echo $ouserdelivery->REACH_CITY_ID ?></td>
+            <td><?php echo $ouserdelivery->DELIVER_CITY_ID ?></td>
+            <td><?php echo $ouserdelivery->DELIVER_TYPE ?></td>
+            <td><?php echo $ouserdelivery->DELIVER_TIME ?></td>
+            <td><?php echo $ouserdelivery->REACH_USERNAME ?></td>
+            <td><?php echo $ouserdelivery->REACH_USER_EMAIL ?></td>
+            <td><?php echo $ouserdelivery->REACH_USER_ADDRESS ?></td>
+            <td><?php echo $ouserdelivery->REACH_USER_PHONE ?></td>
+            <td><?php echo $ouserdelivery->REACH_USER_PROVINCE ?></td>
+            <td><?php echo $ouserdelivery->REACH_USER_CITY ?></td>
+            <td><?php echo $ouserdelivery->REACH_USER_LOCALITY ?></td>
+            <td><?php echo $ouserdelivery->REACH_USER_ZONE ?></td>
+            <td><?php echo $ouserdelivery->REACH_USER_ZIPCODE ?></td>
+            <td><?php echo $ouserdelivery->DELIVER_PERSON_ID ?></td>
+            <td><?php echo $ouserdelivery->DELIVER_PERSON_NAME ?></td>
+            <td><?php echo $ouserdelivery->DELIVER_STATUS ?></td>
+            <td><?php echo $ouserdelivery->REMARKS ?></td>
+            <td><?php echo $ouserdelivery->CREATE_TIME ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("ouserdelivery/edit/".$ouserdelivery->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("ouserdelivery/delete/".$ouserdelivery->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="24" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("ouserdelivery/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("ouserdelivery/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("ouserdelivery/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("ouserdelivery/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

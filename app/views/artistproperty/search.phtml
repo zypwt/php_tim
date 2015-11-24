@@ -1,0 +1,55 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("artistproperty/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("artistproperty/new", "Create artist property")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ARTIST Of ID</th>
+            <th>PROPERTY Of NAME</th>
+            <th>CREATE Of TIME</th>
+            <th>UPDATE Of TIME</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $artistproperty){ ?>
+        <tr>
+            <td><?php echo $artistproperty->ID ?></td>
+            <td><?php echo $artistproperty->ARTIST_ID ?></td>
+            <td><?php echo $artistproperty->PROPERTY_NAME ?></td>
+            <td><?php echo $artistproperty->CREATE_TIME ?></td>
+            <td><?php echo $artistproperty->UPDATE_TIME ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("artistproperty/edit/".$artistproperty->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("artistproperty/delete/".$artistproperty->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="5" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("artistproperty/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("artistproperty/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("artistproperty/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("artistproperty/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

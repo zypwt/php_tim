@@ -1,0 +1,90 @@
+<?php echo \Phalcon\Tag::form("itemactivity/create") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("itemactivity", "Go Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton("Save") ?></td>
+    <tr>
+</table>
+
+<?php echo $this->getContent(); ?>
+
+<div align="center">
+    <h1>Create item activity</h1>
+</div>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="ID">ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="A_NAME">A Of NAME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("A_NAME", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="A_TYPE">A Of TYPE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("A_TYPE", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="A_STARTTIME">A Of STARTTIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("A_STARTTIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="A_ENDTIME">A Of ENDTIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("A_ENDTIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="A_PLATFORM">A Of PLATFORM</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("A_PLATFORM", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="IS_VISIBLE">IS Of VISIBLE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("IS_VISIBLE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="AUDIT_STATUS">AUDIT Of STATUS</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("AUDIT_STATUS", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="A_CONTENT">A Of CONTENT</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textArea(array("A_CONTENT", "cols" => "40", "rows" => "5")) ?>
+            </td>
+        </tr>
+    </table>
+<?php echo \Phalcon\Tag::endForm() ?>

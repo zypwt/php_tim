@@ -1,0 +1,55 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("itemblock/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("itemblock/new", "Create item block")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ITEM Of ID</th>
+            <th>ITEM Of TITLE</th>
+            <th>OP Of NAME</th>
+            <th>IS Of BLOCK</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $itemblock){ ?>
+        <tr>
+            <td><?php echo $itemblock->ID ?></td>
+            <td><?php echo $itemblock->ITEM_ID ?></td>
+            <td><?php echo $itemblock->ITEM_TITLE ?></td>
+            <td><?php echo $itemblock->OP_NAME ?></td>
+            <td><?php echo $itemblock->IS_BLOCK ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("itemblock/edit/".$itemblock->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("itemblock/delete/".$itemblock->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="5" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("itemblock/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("itemblock/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("itemblock/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("itemblock/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

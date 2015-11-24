@@ -1,0 +1,138 @@
+<?php echo $this->getContent(); ?>
+
+<?php echo \Phalcon\Tag::form("giftcardtest/save") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("giftcardtest", "Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton(array("Save")) ?></td>
+    <tr>
+</table>
+
+<div align="center">
+    <h1>Edit giftcardtest</h1>
+</div>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="CARD_NO">CARD Of NO</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CARD_NO", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CARD_PWD">CARD Of PWD</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CARD_PWD", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CARD_TYPE">CARD Of TYPE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CARD_TYPE", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CARD_PRICE">CARD Of PRICE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CARD_PRICE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CREATE_TIME">CREATE Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CREATE_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="END_TIME">END Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("END_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PERSON_UUID">PERSON Of UUID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PERSON_UUID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PARTY_ID">PARTY Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PARTY_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="IS_USE">IS Of USE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("IS_USE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="BATCH_NUMBER">BATCH Of NUMBER</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("BATCH_NUMBER", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CARD_NAME">CARD Of NAME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CARD_NAME", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="SALE_PRICE">SALE Of PRICE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("SALE_PRICE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="START_TIME">START Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("START_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="REMARK">REMARK</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textArea(array("REMARK", "cols" => "40", "rows" => "5")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="AUDIT_STATUS">AUDIT Of STATUS</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("AUDIT_STATUS", "type" => "numeric")) ?>
+            </td>
+        </tr>
+    </table>
+    <?php echo \Phalcon\Tag::endForm() ?>

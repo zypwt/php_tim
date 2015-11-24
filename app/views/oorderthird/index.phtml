@@ -1,0 +1,72 @@
+<?php echo $this->getContent(); ?>
+<div align="right">
+    <?php echo \Phalcon\Tag::linkTo(array("oorderthird/new", "Create O order third")) ?>
+</div>
+
+<div align="center">
+    <h1>Search o order third</h1>
+    <?php echo \Phalcon\Tag::form(array("oorderthird/search")) ?>
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="ID">ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ORDER_NO_CRM">ORDER Of NO Of CRM</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ORDER_NO_CRM", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ORDER_NO_THIRD">ORDER Of NO Of THIRD</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ORDER_NO_THIRD", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ORDER_ITEMS">ORDER Of ITEMS</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textArea(array("ORDER_ITEMS", "cols" => "40", "rows" => "5")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="LOCK_NO">LOCK Of NO</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("LOCK_NO", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="TICKET_SYS_DIC_ID">TICKET Of SYS Of DIC Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("TICKET_SYS_DIC_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PACKAGE_ID">PACKAGE Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PACKAGE_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td><td><?php echo \Phalcon\Tag::submitButton(array("Search")) ?></td>
+        </tr>
+    </table>
+</form>
+</div>

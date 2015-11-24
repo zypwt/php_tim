@@ -1,0 +1,66 @@
+<?php echo $this->getContent(); ?>
+
+<?php echo \Phalcon\Tag::form("oordersettle/save") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("oordersettle", "Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton(array("Save")) ?></td>
+    <tr>
+</table>
+
+<div align="center">
+    <h1>Edit oordersettle</h1>
+</div>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="ORDER_ID">ORDER Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ORDER_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="SETTLE_STATUS">SETTLE Of STATUS</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("SETTLE_STATUS", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PRE_SETTLE_TIME">PRE Of SETTLE Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PRE_SETTLE_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="SETTLE_DONE_TIME">SETTLE Of DONE Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("SETTLE_DONE_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PRE_SETTLE_OPERATOR">PRE Of SETTLE Of OPERATOR</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PRE_SETTLE_OPERATOR", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="SETTLE_DONE_OPERATOR">SETTLE Of DONE Of OPERATOR</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("SETTLE_DONE_OPERATOR", "size" => 30)) ?>
+            </td>
+        </tr>
+    </table>
+    <?php echo \Phalcon\Tag::endForm() ?>

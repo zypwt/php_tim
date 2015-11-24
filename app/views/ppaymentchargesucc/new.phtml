@@ -1,0 +1,154 @@
+<?php echo \Phalcon\Tag::form("ppaymentchargesucc/create") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("ppaymentchargesucc", "Go Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton("Save") ?></td>
+    <tr>
+</table>
+
+<?php echo $this->getContent(); ?>
+
+<div align="center">
+    <h1>Create p payment charge succ</h1>
+</div>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="ID">ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CHARGE_NO">CHARGE Of NO</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CHARGE_NO", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ORDER_ID">ORDER Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ORDER_ID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PARTNER_ORDER_NO">PARTNER Of ORDER Of NO</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PARTNER_ORDER_NO", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PARTY_ID">PARTY Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PARTY_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="MONEY_BASE_FEN">MONEY Of BASE Of FEN</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("MONEY_BASE_FEN", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PAYMENT_STATUS">PAYMENT Of STATUS</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PAYMENT_STATUS", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PAYMENT_TIME">PAYMENT Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PAYMENT_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="TYPE_ID">TYPE Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("TYPE_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CUSTOMER_IP">CUSTOMER Of IP</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CUSTOMER_IP", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CREATE_TIME">CREATE Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CREATE_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="UUID">UUID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("UUID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="AGENCY_ID">AGENCY Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("AGENCY_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PAY_TYPE">PAY Of TYPE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PAY_TYPE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PACKAGE_ID">PACKAGE Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PACKAGE_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="RECEIPT">RECEIPT</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("RECEIPT", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PAYMENT_CLASS">PAYMENT Of CLASS</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PAYMENT_CLASS", "type" => "numeric")) ?>
+            </td>
+        </tr>
+    </table>
+<?php echo \Phalcon\Tag::endForm() ?>

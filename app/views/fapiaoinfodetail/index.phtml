@@ -1,0 +1,80 @@
+<?php echo $this->getContent(); ?>
+<div align="right">
+    <?php echo \Phalcon\Tag::linkTo(array("fapiaoinfodetail/new", "Create Fapiao info detail")) ?>
+</div>
+
+<div align="center">
+    <h1>Search fapiao info detail</h1>
+    <?php echo \Phalcon\Tag::form(array("fapiaoinfodetail/search")) ?>
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="ID">ID</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textField(array("ID")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="UUID">UUID</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textField(array("UUID")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="FAPIAO_NO">FAPIAO Of NO</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("FAPIAO_NO", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="MONEY">MONEY</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("MONEY", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="OPT_TIME">OPT Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("OPT_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="OPT_NAME">OPT Of NAME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("OPT_NAME", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="REMARK">REMARK</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("REMARK", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="FAPIAO_INFO_ID">FAPIAO Of INFO Of ID</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textField(array("FAPIAO_INFO_ID")) ?>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td><td><?php echo \Phalcon\Tag::submitButton(array("Search")) ?></td>
+        </tr>
+    </table>
+</form>
+</div>

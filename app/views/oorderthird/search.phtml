@@ -1,0 +1,59 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("oorderthird/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("oorderthird/new", "Create o order third")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ORDER Of NO Of CRM</th>
+            <th>ORDER Of NO Of THIRD</th>
+            <th>ORDER Of ITEMS</th>
+            <th>LOCK Of NO</th>
+            <th>TICKET Of SYS Of DIC Of ID</th>
+            <th>PACKAGE Of ID</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $oorderthird){ ?>
+        <tr>
+            <td><?php echo $oorderthird->ID ?></td>
+            <td><?php echo $oorderthird->ORDER_NO_CRM ?></td>
+            <td><?php echo $oorderthird->ORDER_NO_THIRD ?></td>
+            <td><?php echo $oorderthird->ORDER_ITEMS ?></td>
+            <td><?php echo $oorderthird->LOCK_NO ?></td>
+            <td><?php echo $oorderthird->TICKET_SYS_DIC_ID ?></td>
+            <td><?php echo $oorderthird->PACKAGE_ID ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("oorderthird/edit/".$oorderthird->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("oorderthird/delete/".$oorderthird->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="7" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("oorderthird/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("oorderthird/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("oorderthird/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("oorderthird/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

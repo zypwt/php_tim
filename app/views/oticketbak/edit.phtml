@@ -1,0 +1,314 @@
+<?php echo $this->getContent(); ?>
+
+<?php echo \Phalcon\Tag::form("oticketbak/save") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("oticketbak", "Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton(array("Save")) ?></td>
+    <tr>
+</table>
+
+<div align="center">
+    <h1>Edit oticketbak</h1>
+</div>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="ID">ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ORDER_ID">ORDER Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ORDER_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="UUID">UUID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("UUID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="USERNAME">USERNAME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("USERNAME", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PRICE_INFO_ID">PRICE Of INFO Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PRICE_INFO_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PRICE">PRICE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PRICE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PRICE_LEVEL">PRICE Of LEVEL</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PRICE_LEVEL", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="TICKET_NAME">TICKET Of NAME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("TICKET_NAME", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="TICKET_TYPE">TICKET Of TYPE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("TICKET_TYPE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="VENUES_ID">VENUES Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("VENUES_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="SCENE_ID">SCENE Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("SCENE_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="TICKET_NUM">TICKET Of NUM</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("TICKET_NUM", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="SEATS">SEATS</label>
+            </td>
+            <td align="left">
+                <?php echo \Phalcon\Tag::textArea(array("SEATS", "cols" => "40", "rows" => "5")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="DISCOUNT">DISCOUNT</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("DISCOUNT", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="DISCOUNT_MONEY">DISCOUNT Of MONEY</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("DISCOUNT_MONEY", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="MONEY">MONEY</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("MONEY", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="TICKET_SOURCE">TICKET Of SOURCE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("TICKET_SOURCE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PIAOWU_ORDER_ID">PIAOWU Of ORDER Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PIAOWU_ORDER_ID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ITEM_TYPE_ID">ITEM Of TYPE Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ITEM_TYPE_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ITEM_ID">ITEM Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ITEM_ID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ONLINE_ID">ONLINE Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ONLINE_ID", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ITEM_SOURCE">ITEM Of SOURCE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ITEM_SOURCE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ITEM_CITY_ID">ITEM Of CITY Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ITEM_CITY_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="SELL_TYPE">SELL Of TYPE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("SELL_TYPE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="TICKET_STATUS">TICKET Of STATUS</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("TICKET_STATUS", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="TICKET_PACKAGE">TICKET Of PACKAGE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("TICKET_PACKAGE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="TICKET_PACKAGE_PRICE">TICKET Of PACKAGE Of PRICE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("TICKET_PACKAGE_PRICE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PIAOWU_XSZC">PIAOWU Of XSZC</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PIAOWU_XSZC", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="PIAOWU_ZYZK">PIAOWU Of ZYZK</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("PIAOWU_ZYZK", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="SOLD_TIME">SOLD Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("SOLD_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="UPDATE_TIME">UPDATE Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("UPDATE_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="CREATE_TIME">CREATE Of TIME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("CREATE_TIME", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ITEM_AGENCY_ID">ITEM Of AGENCY Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ITEM_AGENCY_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="ITEM_ONLINE_CITY_ID">ITEM Of ONLINE Of CITY Of ID</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("ITEM_ONLINE_CITY_ID", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="SEAT_NAME">SEAT Of NAME</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("SEAT_NAME", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="SEAT_NUM">SEAT Of NUM</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("SEAT_NUM", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="COST_PRICE">COST Of PRICE</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("COST_PRICE", "type" => "numeric")) ?>
+            </td>
+        </tr>
+    </table>
+    <?php echo \Phalcon\Tag::endForm() ?>

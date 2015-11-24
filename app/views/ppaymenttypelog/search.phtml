@@ -1,0 +1,55 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("ppaymenttypelog/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("ppaymenttypelog/new", "Create p payment type log")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>USER Of ID</th>
+            <th>COMM</th>
+            <th>CREATE Of TIME</th>
+            <th>TYPE Of ID</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $ppaymenttypelog){ ?>
+        <tr>
+            <td><?php echo $ppaymenttypelog->ID ?></td>
+            <td><?php echo $ppaymenttypelog->USER_ID ?></td>
+            <td><?php echo $ppaymenttypelog->COMM ?></td>
+            <td><?php echo $ppaymenttypelog->CREATE_TIME ?></td>
+            <td><?php echo $ppaymenttypelog->TYPE_ID ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("ppaymenttypelog/edit/".$ppaymenttypelog->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("ppaymenttypelog/delete/".$ppaymenttypelog->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="5" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("ppaymenttypelog/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("ppaymenttypelog/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("ppaymenttypelog/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("ppaymenttypelog/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

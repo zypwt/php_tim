@@ -1,0 +1,59 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("openorder/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("openorder/new", "Create openorder")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>IDNO</th>
+            <th>TYPE</th>
+            <th>STATE</th>
+            <th>TIME</th>
+            <th>CREATETIME</th>
+            <th>READSTATUS</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $openorder){ ?>
+        <tr>
+            <td><?php echo $openorder->ID ?></td>
+            <td><?php echo $openorder->IDNO ?></td>
+            <td><?php echo $openorder->TYPE ?></td>
+            <td><?php echo $openorder->STATE ?></td>
+            <td><?php echo $openorder->TIME ?></td>
+            <td><?php echo $openorder->CREATETIME ?></td>
+            <td><?php echo $openorder->READSTATUS ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("openorder/edit/".$openorder->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("openorder/delete/".$openorder->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="7" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("openorder/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("openorder/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("openorder/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("openorder/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

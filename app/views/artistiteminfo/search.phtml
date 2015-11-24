@@ -1,0 +1,51 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("artistiteminfo/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("artistiteminfo/new", "Create artist item info")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ITEM Of ID</th>
+            <th>ARTIST Of ID</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $artistiteminfo){ ?>
+        <tr>
+            <td><?php echo $artistiteminfo->ID ?></td>
+            <td><?php echo $artistiteminfo->ITEM_ID ?></td>
+            <td><?php echo $artistiteminfo->ARTIST_ID ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("artistiteminfo/edit/".$artistiteminfo->ID, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("artistiteminfo/delete/".$artistiteminfo->ID, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="3" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("artistiteminfo/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("artistiteminfo/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("artistiteminfo/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("artistiteminfo/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>
